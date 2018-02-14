@@ -9,34 +9,25 @@ Jika tidak ditemukan sama sekali, kembalikan nilai false.
 function checkAB(str) {
   var arrA = 0;//[];
   var arrB = 0;//[];
+  var falseResult = '';
 
   for(var i = 0; i < str.length; i++){
     if(str[i] === 'a' || str[i] === 'A'){
-      //arrA.push(i);
-      //arrA += i;
       if(str[i+4] === 'b' || str[i-4] === 'b'){
         return true;
       }else{
-        return false;
+        falseResult = 'false';
       }
     }else if (str[i] === 'b' || str[i] === 'B') {
-      //arrB.push(i);
-      //arrB += i;
       if(str[i+4] === 'a' || str[i-4] === 'a'){
         return true;
       }else{
-        return false;
+        falseResult = 'false';
       }
     }
   }
-  //console.log(arrA+'\n'+arrB);
-  /*if(arrA === 0 || arrB === 0){
-    return false;
-  }else if(arrA - arrB !== 1){
-    return true;
-  }else{
-    return false;
-  }*/
+  return falseResult;
+
 }
 //jarak dari b atau a -> +4 - 4
 // TEST CASES
@@ -48,8 +39,8 @@ console.log(checkAB('bacon and meat')); // false
 
 //Tes lagi
 console.log(checkAB('ba')); // should be false
-console.log(checkAB('baba')); // 
+console.log(checkAB('baba')); //
 console.log(checkAB('baab')); //
 console.log(checkAB('abba')); //
-console.log(checkAB('aaaabaaaaaa')); //
+console.log(checkAB('aaaabaaa')); //
 console.log(checkAB('bbbabbb')); //
