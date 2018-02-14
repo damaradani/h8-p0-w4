@@ -26,9 +26,10 @@ function countProfit(shoppers) {
                      ['Baju Zoro', 500000, 2, [], 0],
                      ['Sweater Uniklooh', 175000, 1, [], 0]
                    ];
+  let result = [];
 
   if(shoppers.length === 0){
-      return 'Ga ada yang beli';
+      return result;
   }else{
       for(var i = 0; i < shoppers.length; i++){
           //console.log(shoppers[i].product+' yang diminta');
@@ -65,7 +66,7 @@ function countProfit(shoppers) {
       //console.log(pembeli);
 
       let objResult = {};
-      let result = [];
+
       for(var d = 0; d < listBarang.length; d ++){
             //console.log(pembeli[d][pembeli[d].length-1]);
             //console.log(pembeli[d].slice(0, pembeli[d].length-2));
@@ -82,8 +83,8 @@ function countProfit(shoppers) {
             objResult = {};
       }
 
-      console.log(result);
-      return '==========================';
+      //console.log(result);
+      return result;
   }
 
 }
