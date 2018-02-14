@@ -19,7 +19,7 @@ function hitungHuruf(kata) {
       var counter = 0;
 
       for(var i = 0; i < arrKata[h].length; i++){
-        
+
             for(var j = i; j <arrKata[h].length; j++){
                 if(arrKata[h][i] === arrKata[h][j]){
                   counter += 1;
@@ -39,9 +39,8 @@ function hitungHuruf(kata) {
   if(jumlahHuruf === 1){
       return -1;
   }else{
-      //return hasilKata+' '+hurufSama+' '+jumlahHuruf+'\n';
-      //return hasilKata;
-      return 'Hasil kalimat : '+hasilKata+'\nHuruf Sama : '+hurufSama+'\nJumlah hurufnya ; '+jumlahHuruf+'\n';
+      return hasilKata;
+      //return 'Hasil kalimat : '+hasilKata+'\nHuruf Sama : '+hurufSama+'\nJumlah hurufnya ; '+jumlahHuruf+'\n';
   }
   /*var hurufSama = '';
   var jumlahHuruf = 1;
