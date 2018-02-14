@@ -13,22 +13,32 @@ function checkAB(str) {
   for(var i = 0; i < str.length; i++){
     if(str[i] === 'a' || str[i] === 'A'){
       //arrA.push(i);
-      arrA += i;
+      //arrA += i;
+      if(str[i+4] === 'b' || str[i-4] === 'b'){
+        return true;
+      }else{
+        return false;
+      }
     }else if (str[i] === 'b' || str[i] === 'B') {
       //arrB.push(i);
-      arrB += i;
+      //arrB += i;
+      if(str[i+4] === 'a' || str[i-4] === 'a'){
+        return true;
+      }else{
+        return false;
+      }
     }
   }
   //console.log(arrA+'\n'+arrB);
-  if(arrA === 0 || arrB === 0){
+  /*if(arrA === 0 || arrB === 0){
     return false;
   }else if(arrA - arrB !== 1){
     return true;
   }else{
-    return false+'kayanya';
-  }
+    return false;
+  }*/
 }
-
+//jarak dari b atau a -> +4 - 4
 // TEST CASES
 console.log(checkAB('lane borrowed')); // true
 console.log(checkAB('i am sick')); // false
@@ -38,8 +48,8 @@ console.log(checkAB('bacon and meat')); // false
 
 //Tes lagi
 console.log(checkAB('ba')); // should be false
-console.log(checkAB('baba')); // should be true
-console.log(checkAB('baab')); // should be true
-console.log(checkAB('abba')); // should be true
+console.log(checkAB('baba')); // 
+console.log(checkAB('baab')); //
+console.log(checkAB('abba')); //
 console.log(checkAB('aaaabaaaaaa')); //
-console.log(checkAB('bbbabbb')); // 
+console.log(checkAB('bbbabbb')); //

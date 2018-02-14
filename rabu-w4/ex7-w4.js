@@ -9,33 +9,20 @@ adalah 3 * 8 atau 4 * 6, sehingga function akan me-return 2.
 */
 
 function digitPerkalianMinimum(angka) {
-  //var faktor = '';
-  //var hasilKali = 0;
-  //var numStr = '';
-  var hasil;
-
-  for(var i = 1; i <= angka; i++){
-    //faktor = i+' * '+(angka / i);
-    //hasilKali = i * (angka / i);
-    var numStr = String(angka /i);
-
-    if(i === angka){
-      hasil = numStr.length+1;
-    }else if(angka % i !== 0 && angka % i !== angka){
-      break;
-    }else if (angka / i < 10) {
-      hasil = numStr.length+1;
-    }else if(angka / i === 10){
-      hasil = numStr.length;
-    }else { //if (angka / i < 100) {
-      hasil = numStr.length+1;
+    var angkaLen = String(angka).length+1;
+    var newLen = 0;
+    for(var i = 1; i <= angka; i++){
+      for(var j = 1; j <= angka; j++){
+        if(i * j === angka){
+          newLen = parseInt(String(i).length + String(j).length);
+          //return newLen;
+          if(newLen < angkaLen){
+            angkaLen = newLen;
+          }
+        }
+      }
     }
-
-    //console.log(faktor);
-    //console.log(hasilKali+'\n');
-  }
-  return hasil;
-  //return hasil+'\n===========';
+    return angkaLen;
 }
 
 // TEST CASES
@@ -47,5 +34,5 @@ console.log(digitPerkalianMinimum(1)); // 2
 
 // Tes lain
 console.log(digitPerkalianMinimum(200)); //
-console.log(digitPerkalianMinimum(2000)); // 
+console.log(digitPerkalianMinimum(2000)); //
 console.log(digitPerkalianMinimum(100));
