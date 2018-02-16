@@ -22,6 +22,20 @@ function urutkanAbjad(str) {
   //Mengurutkan huruf / angka abjad nya kalo pake sort
   abjadNum.sort(function(a,b){return a > b});
 
+  /*sorting array wihout sort function
+  var done = false;
+  while(!done){
+      done = true;
+      for(let i = 0; i < abjadNum.length; i++){
+          if(abjadNum[i] > abjadNum[i+1]){
+              done = false;
+              var temp = abjadNum[i];
+              abjadNum[i] = abjadNum[i+1];
+              abjadNum[i+1] = temp;
+          }
+      }
+  }*/
+
   var afterSort = '';
 
   for(var k = 0; k < abjadNum.length; k++){
