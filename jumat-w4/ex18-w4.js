@@ -50,25 +50,18 @@ function kaliTerusRekursif(angka) {
 
       }
   }*/
-  var kali = 1;
-  function recursive(num){
-      var numStr = String(num);
-      //console.log(num);
-      if(numStr.length === 1){
-          return kali*num;
-      }else{
-          for(var i = 0; i < numStr.length; i++){
-              kali *= parseInt(numStr[i]);
-          }
-          var hasil = kali;
-          kali = 1;
-          return recursive(hasil);
+  let numStr = String(angka);
+  let hasilKali = 1;
 
-
+  if(numStr.length === 1){
+      return hasilKali*angka;
+  }else{
+      for(let i = 0; i < numStr.length; i++){
+          hasilKali *= parseInt(numStr[i]);
       }
+      //console.log(hasilKali);
+      return kaliTerusRekursif(hasilKali);
   }
-
-  return recursive(angka);
 }
 
 // TEST CASES
