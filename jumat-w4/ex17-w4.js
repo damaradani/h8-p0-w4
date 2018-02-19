@@ -26,20 +26,14 @@ function totalDigitRekursif(angka) {
 
   return result;
   */
-  var result = 0;
-  function proses(num){
-    var numStr = String(num);
-    if(numStr.length == 1){
-        return result+num;
-    }else {
-        result += parseInt(numStr[0]);
-        var delNum = numStr.slice(1,numStr.length);
-        return proses(parseInt(delNum));
-    }
+  var angkaStr = String(angka);
 
+  if( angkaStr.length === 1){
+      return angka;
+  }else {
+      var splice = parseInt(angkaStr.slice(1));
+      return parseInt(angkaStr[0]) + totalDigitRekursif(splice);
   }
-
-  return proses(angka);
 
 }
 

@@ -53,20 +53,11 @@ function makanTerusRekursif(waktu) {
           }
       }
   }*/
-  var counter = 0;
-  function tes(tesWaktu){
-    if(tesWaktu <= 0){
-        //console.log('tes');
-
-        return counter;
-    }else{
-        counter++;
-        return tes(tesWaktu-15);
-    }
-
-  }
-
-  return tes(waktu);
+  if(waktu <= 0){
+      return 0;
+  }else {
+      return 1 + makanTerusRekursif(waktu-15)
+  };
 }
 
 // TEST CASES
